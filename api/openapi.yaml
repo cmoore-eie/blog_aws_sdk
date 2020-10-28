@@ -1,0 +1,300 @@
+openapi: 3.0.1
+info:
+  title: blog_aws_reference_data
+  version: 2020-10-27T18:56:03Z
+servers:
+- url: https://vxymc6j9r0.execute-api.us-east-1.amazonaws.com/{basePath}
+  variables:
+    basePath:
+      default: /development
+paths:
+  /branch:
+    delete:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Branch'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-contentType: application/json
+      x-accepts: application/json
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Branch'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-contentType: application/json
+      x-accepts: application/json
+  /gender:
+    delete:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Gender'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-contentType: application/json
+      x-accepts: application/json
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Gender'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-contentType: application/json
+      x-accepts: application/json
+  /dealer:
+    delete:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dealer'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-contentType: application/json
+      x-accepts: application/json
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dealer'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-contentType: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    Empty:
+      title: Empty Schema
+      type: object
+    Branch:
+      description: A Branch in the Reference Data
+      example:
+        Locked: true
+        ExpirationDate: ExpirationDate
+        BranchType: local
+        UUID: UUID
+        Code: Code
+        Name: Name
+        EffectiveDate: EffectiveDate
+      properties:
+        Code:
+          description: Code representing the Gender
+          type: string
+        Name:
+          description: Name of the Gender
+          type: string
+        Locked:
+          description: If the Item is locked for updates
+          type: boolean
+        UUID:
+          description: Identifier
+          type: string
+        EffectiveDate:
+          description: Date the item comes into effect
+          type: string
+        ExpirationDate:
+          description: Date the item stops being in effect
+          type: string
+        BranchType:
+          description: Date the item stops being in effect
+          enum:
+          - local
+          - main
+          type: string
+      title: Branch
+      type: object
+    Gender:
+      description: A Gender in the Reference Data
+      example:
+        Locked: true
+        ExpirationDate: ExpirationDate
+        UUID: UUID
+        Code: Code
+        Name: Name
+        EffectiveDate: EffectiveDate
+      properties:
+        Code:
+          description: Code representing the Gender
+          type: string
+        Name:
+          description: Name of the Gender
+          type: string
+        Locked:
+          description: If the Item is locked for updates
+          type: boolean
+        UUID:
+          description: Identifier
+          type: string
+        EffectiveDate:
+          description: Date the item comes into effect
+          type: string
+        ExpirationDate:
+          description: Date the item stops being in effect
+          type: string
+      title: Gender
+      type: object
+    Dealer:
+      description: A Dealer in the Reference Data
+      example:
+        DealerLocations:
+        - AddressLine2: AddressLine2
+          AddressLine1: AddressLine1
+          City: City
+          Postcode: Postcode
+          Name: Name
+        - AddressLine2: AddressLine2
+          AddressLine1: AddressLine1
+          City: City
+          Postcode: Postcode
+          Name: Name
+        Locked: true
+        ExpirationDate: ExpirationDate
+        UUID: UUID
+        Code: Code
+        Name: Name
+        EffectiveDate: EffectiveDate
+      properties:
+        Code:
+          description: Code representing the Gender
+          type: string
+        Name:
+          description: Name of the Gender
+          type: string
+        Locked:
+          description: If the Item is locked for updates
+          type: boolean
+        UUID:
+          description: Identifier
+          type: string
+        EffectiveDate:
+          description: Date the item comes into effect
+          type: string
+        ExpirationDate:
+          description: Date the item stops being in effect
+          type: string
+        DealerLocations:
+          description: Locations of the Dealer
+          items:
+            $ref: '#/components/schemas/Dealer_DealerLocations'
+          type: array
+      title: Dealer
+      type: object
+    Dealer_DealerLocations:
+      example:
+        AddressLine2: AddressLine2
+        AddressLine1: AddressLine1
+        City: City
+        Postcode: Postcode
+        Name: Name
+      properties:
+        Name:
+          type: string
+        AddressLine1:
+          type: string
+        AddressLine2:
+          type: string
+        City:
+          type: string
+        Postcode:
+          type: string
+

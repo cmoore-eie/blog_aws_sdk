@@ -6,6 +6,7 @@ import blog.aws.referencedata.sdk.api.DefaultApi;
 import blog.aws.referencedata.sdk.model.Branch;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.UUID;
 
 public class BranchBuilder {
@@ -14,6 +15,22 @@ public class BranchBuilder {
 
     public BranchBuilder() {
         builtObject = new Branch();
+    }
+
+    public BranchBuilder(LinkedHashMap item) {
+        builtObject = new Branch();
+        if(item.containsKey("ItemType")){
+
+        }
+        if(item.containsKey("Code")){
+            withCode((String) item.get("Code"));
+        }
+        if(item.containsKey("ItemUUID")){
+            withItemIdentifier((String) item.get("ItemUUID"));
+        }
+        if(item.containsKey("Name")){
+            withItemIdentifier((String) item.get("Name"));
+        }
     }
 
     public BranchBuilder withDefaults() {

@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: blog_aws_reference_data
-  version: 2020-10-27T18:56:03Z
+  version: 2020-10-29T19:55:50Z
 servers:
 - url: https://vxymc6j9r0.execute-api.us-east-1.amazonaws.com/{basePath}
   variables:
@@ -19,6 +19,14 @@ paths:
           description: 200 response
       x-accepts: application/json
     get:
+      parameters:
+      - explode: true
+        in: query
+        name: ItemUUID
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -58,6 +66,26 @@ paths:
                 $ref: '#/components/schemas/Empty'
           description: 200 response
       x-contentType: application/json
+      x-accepts: application/json
+  /branch-all:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
+  /dealer-all:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
       x-accepts: application/json
   /gender:
     delete:
@@ -70,6 +98,14 @@ paths:
           description: 200 response
       x-accepts: application/json
     get:
+      parameters:
+      - explode: true
+        in: query
+        name: ItemUUID
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -110,6 +146,16 @@ paths:
           description: 200 response
       x-contentType: application/json
       x-accepts: application/json
+  /gender-all:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Empty'
+          description: 200 response
+      x-accepts: application/json
   /dealer:
     delete:
       responses:
@@ -121,12 +167,17 @@ paths:
           description: 200 response
       x-accepts: application/json
     get:
+      parameters:
+      - explode: true
+        in: query
+        name: ItemUUID
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Empty'
+          content: {}
           description: 200 response
       x-accepts: application/json
     post:

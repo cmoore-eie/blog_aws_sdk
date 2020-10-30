@@ -5,6 +5,7 @@ import blog.aws.referencedata.sdk.api.DefaultApi;
 import blog.aws.referencedata.sdk.model.Gender;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.UUID;
 
 public class GenderBuilder {
@@ -13,6 +14,22 @@ public class GenderBuilder {
 
     public GenderBuilder() {
         builtObject = new Gender();
+    }
+
+    public GenderBuilder(LinkedHashMap item) {
+        builtObject = new Gender();
+        if(item.containsKey("ItemType")){
+
+        }
+        if(item.containsKey("Code")){
+            withCode((String) item.get("Code"));
+        }
+        if(item.containsKey("ItemUUID")){
+            withItemIdentifier((String) item.get("ItemUUID"));
+        }
+        if(item.containsKey("Name")){
+            withItemIdentifier((String) item.get("Name"));
+        }
     }
 
     public GenderBuilder withDefaults() {

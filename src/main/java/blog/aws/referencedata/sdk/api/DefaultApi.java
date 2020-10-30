@@ -22,6 +22,17 @@ public interface DefaultApi extends ApiClient.Api {
    * 
    * @return Object
    */
+  @RequestLine("GET /branch-all")
+  @Headers({
+    "Accept: application/json",
+  })
+  Object branchAllGet();
+
+  /**
+   * 
+   * 
+   * @return Object
+   */
   @RequestLine("DELETE /branch")
   @Headers({
     "Accept: application/json",
@@ -31,13 +42,46 @@ public interface DefaultApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param itemUUID  (required)
    * @return Object
    */
-  @RequestLine("GET /branch")
+  @RequestLine("GET /branch?ItemUUID={itemUUID}")
   @Headers({
     "Accept: application/json",
   })
-  Object branchGet();
+  Object branchGet(@Param("itemUUID") String itemUUID);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>branchGet</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link BranchGetQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>itemUUID -  (required)</li>
+   *   </ul>
+   * @return Object
+   */
+  @RequestLine("GET /branch?ItemUUID={itemUUID}")
+  @Headers({
+  "Accept: application/json",
+  })
+  Object branchGet(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>branchGet</code> method in a fluent style.
+   */
+  public static class BranchGetQueryParams extends HashMap<String, Object> {
+    public BranchGetQueryParams itemUUID(final String value) {
+      put("ItemUUID", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * 
@@ -70,6 +114,17 @@ public interface DefaultApi extends ApiClient.Api {
    * 
    * @return Object
    */
+  @RequestLine("GET /dealer-all")
+  @Headers({
+    "Accept: application/json",
+  })
+  Object dealerAllGet();
+
+  /**
+   * 
+   * 
+   * @return Object
+   */
   @RequestLine("DELETE /dealer")
   @Headers({
     "Accept: application/json",
@@ -79,13 +134,44 @@ public interface DefaultApi extends ApiClient.Api {
   /**
    * 
    * 
-   * @return Object
+   * @param itemUUID  (required)
    */
-  @RequestLine("GET /dealer")
+  @RequestLine("GET /dealer?ItemUUID={itemUUID}")
   @Headers({
     "Accept: application/json",
   })
-  Object dealerGet();
+  void dealerGet(@Param("itemUUID") String itemUUID);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>dealerGet</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DealerGetQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>itemUUID -  (required)</li>
+   *   </ul>
+   */
+  @RequestLine("GET /dealer?ItemUUID={itemUUID}")
+  @Headers({
+  "Accept: application/json",
+  })
+  void dealerGet(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>dealerGet</code> method in a fluent style.
+   */
+  public static class DealerGetQueryParams extends HashMap<String, Object> {
+    public DealerGetQueryParams itemUUID(final String value) {
+      put("ItemUUID", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * 
@@ -118,6 +204,17 @@ public interface DefaultApi extends ApiClient.Api {
    * 
    * @return Object
    */
+  @RequestLine("GET /gender-all")
+  @Headers({
+    "Accept: application/json",
+  })
+  Object genderAllGet();
+
+  /**
+   * 
+   * 
+   * @return Object
+   */
   @RequestLine("DELETE /gender")
   @Headers({
     "Accept: application/json",
@@ -127,13 +224,46 @@ public interface DefaultApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param itemUUID  (required)
    * @return Object
    */
-  @RequestLine("GET /gender")
+  @RequestLine("GET /gender?ItemUUID={itemUUID}")
   @Headers({
     "Accept: application/json",
   })
-  Object genderGet();
+  Object genderGet(@Param("itemUUID") String itemUUID);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>genderGet</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link GenderGetQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>itemUUID -  (required)</li>
+   *   </ul>
+   * @return Object
+   */
+  @RequestLine("GET /gender?ItemUUID={itemUUID}")
+  @Headers({
+  "Accept: application/json",
+  })
+  Object genderGet(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>genderGet</code> method in a fluent style.
+   */
+  public static class GenderGetQueryParams extends HashMap<String, Object> {
+    public GenderGetQueryParams itemUUID(final String value) {
+      put("ItemUUID", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * 

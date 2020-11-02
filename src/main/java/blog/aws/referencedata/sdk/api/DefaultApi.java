@@ -31,13 +31,46 @@ public interface DefaultApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param itemUUID  (required)
    * @return Object
    */
-  @RequestLine("DELETE /branch")
+  @RequestLine("DELETE /branch?ItemUUID={itemUUID}")
   @Headers({
     "Accept: application/json",
   })
-  Object branchDelete();
+  Object branchDelete(@Param("itemUUID") String itemUUID);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>branchDelete</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link BranchDeleteQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>itemUUID -  (required)</li>
+   *   </ul>
+   * @return Object
+   */
+  @RequestLine("DELETE /branch?ItemUUID={itemUUID}")
+  @Headers({
+  "Accept: application/json",
+  })
+  Object branchDelete(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>branchDelete</code> method in a fluent style.
+   */
+  public static class BranchDeleteQueryParams extends HashMap<String, Object> {
+    public BranchDeleteQueryParams itemUUID(final String value) {
+      put("ItemUUID", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * 
@@ -123,13 +156,46 @@ public interface DefaultApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param itemUUID  (required)
    * @return Object
    */
-  @RequestLine("DELETE /dealer")
+  @RequestLine("DELETE /dealer?ItemUUID={itemUUID}")
   @Headers({
     "Accept: application/json",
   })
-  Object dealerDelete();
+  Object dealerDelete(@Param("itemUUID") String itemUUID);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>dealerDelete</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DealerDeleteQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>itemUUID -  (required)</li>
+   *   </ul>
+   * @return Object
+   */
+  @RequestLine("DELETE /dealer?ItemUUID={itemUUID}")
+  @Headers({
+  "Accept: application/json",
+  })
+  Object dealerDelete(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>dealerDelete</code> method in a fluent style.
+   */
+  public static class DealerDeleteQueryParams extends HashMap<String, Object> {
+    public DealerDeleteQueryParams itemUUID(final String value) {
+      put("ItemUUID", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * 
@@ -213,13 +279,46 @@ public interface DefaultApi extends ApiClient.Api {
   /**
    * 
    * 
+   * @param itemUUID  (required)
    * @return Object
    */
-  @RequestLine("DELETE /gender")
+  @RequestLine("DELETE /gender?ItemUUID={itemUUID}")
   @Headers({
     "Accept: application/json",
   })
-  Object genderDelete();
+  Object genderDelete(@Param("itemUUID") String itemUUID);
+
+  /**
+   * 
+   * 
+   * Note, this is equivalent to the other <code>genderDelete</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link GenderDeleteQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>itemUUID -  (required)</li>
+   *   </ul>
+   * @return Object
+   */
+  @RequestLine("DELETE /gender?ItemUUID={itemUUID}")
+  @Headers({
+  "Accept: application/json",
+  })
+  Object genderDelete(@QueryMap(encoded=true) Map<String, Object> queryParams);
+
+  /**
+   * A convenience class for generating query parameters for the
+   * <code>genderDelete</code> method in a fluent style.
+   */
+  public static class GenderDeleteQueryParams extends HashMap<String, Object> {
+    public GenderDeleteQueryParams itemUUID(final String value) {
+      put("ItemUUID", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * 

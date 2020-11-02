@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: blog_aws_reference_data
-  version: 2020-10-29T19:55:50Z
+  version: 2020-10-30T10:36:19Z
 servers:
 - url: https://vxymc6j9r0.execute-api.us-east-1.amazonaws.com/{basePath}
   variables:
@@ -10,6 +10,14 @@ servers:
 paths:
   /branch:
     delete:
+      parameters:
+      - explode: true
+        in: query
+        name: ItemUUID
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -89,6 +97,14 @@ paths:
       x-accepts: application/json
   /gender:
     delete:
+      parameters:
+      - explode: true
+        in: query
+        name: ItemUUID
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -158,6 +174,14 @@ paths:
       x-accepts: application/json
   /dealer:
     delete:
+      parameters:
+      - explode: true
+        in: query
+        name: ItemUUID
+        required: true
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:

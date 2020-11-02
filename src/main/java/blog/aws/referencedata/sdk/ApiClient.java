@@ -24,7 +24,7 @@ public class ApiClient {
   public interface Api {}
 
   protected ObjectMapper objectMapper;
-  private String basePath = "https://vxymc6j9r0.execute-api.us-east-1.amazonaws.com/development";
+  private String basePath = "https://vxymc6j9r0.execute-api.us-east-1.amazonaws.com//development";
   private Map<String, RequestInterceptor> apiAuthorizations;
   private Feign.Builder feignBuilder;
 
